@@ -103,7 +103,7 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/kaipengHan/kaipengHan.github.io
+  repo: https://hkp4570.github.io/Colourful.github.io/
   branch: gh-pages
 
 search:
