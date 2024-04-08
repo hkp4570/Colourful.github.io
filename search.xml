@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo+GitHub搭建静态页面常见问题</title>
+    <url>/2024/04/08/hexo+GitHub%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h4 id="部署代码时需要输入用户名和密码"><a href="#部署代码时需要输入用户名和密码" class="headerlink" title="部署代码时需要输入用户名和密码"></a>部署代码时需要输入用户名和密码</h4><p><img src="/2024/04/08/hexo+GitHub%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/1.png" alt="截屏2024-04-08 11.15.40"></p>
+<span id="more"></span>
+
+<p>是因为deploy配置的repo是https的地址</p>
+<p><img src="/2024/04/08/hexo+GitHub%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/2.png" alt="截屏2024-04-08 11.17.02"></p>
+<p>把配置改为ssh</p>
+<p><img src="/2024/04/08/hexo+GitHub%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/3.png" alt="截屏2024-04-08 11.21.27"></p>
+<h4 id="执行hexo-g-命令之后html文件为空，而且控制台有No-Layout"><a href="#执行hexo-g-命令之后html文件为空，而且控制台有No-Layout" class="headerlink" title="执行hexo g 命令之后html文件为空，而且控制台有No Layout"></a>执行hexo g 命令之后html文件为空，而且控制台有No Layout</h4><p><img src="/2024/04/08/hexo+GitHub%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/4.png" alt="截屏2024-04-08 11.32.21"></p>
+<p>这种情况可能是<code>_config.yml</code>配置文件中theme的配置的是一个没有下载过的主题，这时候可以到<a href="https://hexo.io/themes/">主题网站</a>下载对应的主题。重新执行就可以了。</p>
+]]></content>
+      <categories>
+        <category>记录</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>react中引入rc-tree和rc-tree-select库之后样式覆盖问题</title>
     <url>/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在项目中同时引入rc-tree和rc-tree-select库之后，同时在全局样式文件global.less中分别引入两个库的样式文件</p>
@@ -62,11 +83,5 @@
         <tag>hexo</tag>
         <tag>github</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>测试</title>
-    <url>/2021/11/05/%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="测试文章"><a href="#测试文章" class="headerlink" title="测试文章"></a>测试文章</h2><p>这是一篇测试文章</p>
-]]></content>
   </entry>
 </search>
