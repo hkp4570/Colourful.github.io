@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>PicGo+GitHub搭建个人免费图床，并在Typora中实现图片自定上传到GitHub</title>
+    <url>/2024/04/09/PicGo+GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%EF%BC%8C%E5%B9%B6%E5%9C%A8Typora%E4%B8%AD%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%AE%9A%E4%B8%8A%E4%BC%A0%E5%88%B0GitHub/</url>
+    <content><![CDATA[<p>2024/4/10 上午9:23</p>
+<h3 id="PicGo-GitHub搭建个人免费图床，并在Typora中实现图片自定上传到GitHub"><a href="#PicGo-GitHub搭建个人免费图床，并在Typora中实现图片自定上传到GitHub" class="headerlink" title="PicGo+GitHub搭建个人免费图床，并在Typora中实现图片自定上传到GitHub"></a>PicGo+GitHub搭建个人免费图床，并在Typora中实现图片自定上传到GitHub</h3><p>本文介绍使用<code>PicGo</code>+<code>GitHub</code>搭建免费图床，主要实现在<code>Typora</code>中写个人博客是图片可自动上传。</p>
+<ol>
+<li><p>新建<code>GitHub</code>仓库并进行配置</p>
+<p>​    </p>
+<p><strong>注意需要设置为公共仓库</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hkp4570/ImagePicGo@main/img/%E6%96%B0%E5%BB%BAGitHub%E4%BB%93%E5%BA%93.png" alt="新建GitHub仓库"></p>
+<span id="more"></span></li>
+<li><p>进入设置页面，打开<code>**Developer settings**</code>，创建新的<code>token</code>，并进行设置。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hkp4570/ImagePicGo@main/img/%E4%B8%AA%E4%BA%BA%E8%AE%BE%E7%BD%AE.png" alt="个人设置"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hkp4570/ImagePicGo@main/img/%E5%BC%80%E5%8F%91%E8%80%85%E8%AE%BE%E7%BD%AE.png" alt="开发者设置"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hkp4570/ImagePicGo@main/img/%E6%96%B0%E5%BB%BAtoken.png" alt="新建token"></p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/hkp4570/ImagePicGo@main/img/token%E8%AE%BE%E7%BD%AE.png" alt="token设置"></p>
+<p>​       <strong>过期时间可设置为不过期，Select scopes只勾选repo就可以</strong></p>
+<ol start="3">
+<li><p>配置<code>PicGo</code></p>
+<p>首先到<a href="https://github.com/Molunerfinn/PicGo/releases">官网</a>进行下载，下载慢的话可以使用国内镜像源，<a href="https://github.com/Molunerfinn/PicGo">官网首页</a>有对应的地址。最好使用稳定的版本。目前稳定版本是v2.3.1。</p>
+<p>下载完成后安装并运行，在Mac中运行时可能会报错文件已经损坏，请参考此<a href="https://blog.csdn.net/m0_49562857/article/details/128998691">博客</a>解决。</p>
+<p>运行后配置GitHub</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hkp4570/ImagePicGo@main/img/PicGo%E8%AE%BE%E7%BD%AE.png" alt="PicGo设置"></p>
+</li>
+</ol>
+<blockquote>
+<p>​    自定义域名配置了好几次才成功，可能粘贴的时候不是纯文本的原因。最好不要使用默认域名，速度贼慢</p>
+</blockquote>
+<p>​        配置完成后打开上传区，上传文件，如果相册中有你上传的文件说明已经配置生效了。如果失败的话可以        日志文件查看报错信息。</p>
+<ol start="4">
+<li><p>配置<code>Typora</code></p>
+<p>在使用Typora时，当我们粘贴图片时，想要让图片自动上传图床。这是需要打开设置，点击图像选项，配置上传服务。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hkp4570/ImagePicGo@main/img/Typora%E5%9B%BE%E5%83%8F%E8%AE%BE%E7%BD%AE.png" alt="Typora图像设置"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hkp4570/ImagePicGo@main/img/Typora%E5%9B%BE%E5%83%8F%E9%AA%8C%E8%AF%81.png" alt="Typora图像验证"></p>
+</li>
+</ol>
+<blockquote>
+<p>不能上传重复的图片，否则会上传不成功。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>记录</category>
+      </categories>
+      <tags>
+        <tag>PicGo</tag>
+        <tag>github</tag>
+        <tag>图床</tag>
+        <tag>Typora</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo+GitHub搭建静态页面常见问题</title>
     <url>/2024/04/08/hexo+GitHub%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h4 id="部署代码时需要输入用户名和密码"><a href="#部署代码时需要输入用户名和密码" class="headerlink" title="部署代码时需要输入用户名和密码"></a>部署代码时需要输入用户名和密码</h4><p><img src="/2024/04/08/hexo+GitHub%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/1.png" alt="截屏2024-04-08 11.15.40"></p>
@@ -17,8 +69,8 @@
         <category>记录</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>github</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -80,8 +132,8 @@
         <category>记录</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>github</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
