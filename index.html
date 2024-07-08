@@ -151,6 +151,65 @@
     
     
     <article
+  id="post-script标签中async和defer属性"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2024/07/08/script%E6%A0%87%E7%AD%BE%E4%B8%ADasync%E5%92%8Cdefer%E5%B1%9E%E6%80%A7/"
+    >script标签中async和defer属性</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/07/08/script%E6%A0%87%E7%AD%BE%E4%B8%ADasync%E5%92%8Cdefer%E5%B1%9E%E6%80%A7/" class="article-date">
+  <time datetime="2024-07-08T01:51:40.000Z" itemprop="datePublished">2024-07-08</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p><code>script</code>标签中的<code>script</code>和<code>defer</code>属性用于控制<code>JavaScript</code>脚本的加载和执行时机：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&#x27;script.js&#x27;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&#x27;async.js&#x27;</span> <span class="attr">async</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&#x27;defer.js&#x27;</span> <span class="attr">defer</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>开发过程中经常遇到这三类<code>script</code>，那么它们有什么区别？</p> 
+      <a class="article-more-link" href="/2024/07/08/script%E6%A0%87%E7%AD%BE%E4%B8%ADasync%E5%92%8Cdefer%E5%B1%9E%E6%80%A7/"
+        >阅读更多...</a
+      >
+       
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-webpack &lt; 5 used to include polyfills for node.js core modules by default. This is no longer the case. Verify if you need this module and configure a polyfill for it"
   class="article article-type-post"
   itemscope
@@ -182,7 +241,7 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h3 id="问题复现"><a href="#问题复现" class="headerlink" title="问题复现"></a>问题复现</h3><p>启动<a href="mailto:&#x76;&#x75;&#101;&#64;&#50;&#46;&#x36;">&#x76;&#x75;&#101;&#64;&#50;&#46;&#x36;</a>版本的项目时突然报错，查看<code>webpack</code>文档。原来<code>webpack 5</code> 不再自动 polyfill Node.js 的核心模块，这意味着如果你在浏览器或类似的环境中运行的代码中使用它们，你必须从 NPM 中安装兼容的模块，并自己包含它们。<a target="_blank" rel="noopener" href="https://webpack.docschina.org/configuration/resolve/#resolvefallback">文档地址</a></p> 
+  <h3 id="问题复现"><a href="#问题复现" class="headerlink" title="问题复现"></a>问题复现</h3><p>启动<a href="mailto:&#x76;&#117;&#x65;&#64;&#x32;&#46;&#x36;">&#x76;&#117;&#x65;&#64;&#x32;&#46;&#x36;</a>版本的项目时突然报错，查看<code>webpack</code>文档。原来<code>webpack 5</code> 不再自动 polyfill Node.js 的核心模块，这意味着如果你在浏览器或类似的环境中运行的代码中使用它们，你必须从 NPM 中安装兼容的模块，并自己包含它们。<a target="_blank" rel="noopener" href="https://webpack.docschina.org/configuration/resolve/#resolvefallback">文档地址</a></p> 
       <a class="article-more-link" href="/2024/05/31/webpack%20%3C%205%20used%20to%20include%20polyfills%20for%20node.js%20core%20modules%20by%20default.%20This%20is%20no%20longer%20the%20case.%20Verify%20if%20you%20need%20this%20module%20and%20configure%20a%20polyfill%20for%20it/"
         >阅读更多...</a
       >

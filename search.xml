@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>react中引入rc-tree和rc-tree-select库之后样式覆盖问题</title>
+    <url>/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在项目中同时引入rc-tree和rc-tree-select库之后，同时在全局样式文件global.less中分别引入两个库的样式文件</p>
+<span id="more"></span>
+<p><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/1.png" alt="文件引入"><br>这时我们打开页面之后会发现rc-tree的样式没有正常显示，而且无法展开树结构<br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/2.png" alt="不正常显示"><br>可是下面这样才是正常显示<br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/3.png" alt="正常显示"><br>而此时rc-tree-select组件库却能够正常显示<br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/4.png" alt="正常显示"><br>当我们调整全局样式文件中两个库的样式引入顺序，会发现谁后引入谁就可以正常显示。猜测可能是发生了样式覆盖</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/5.png" alt="解决"><br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/6.png" alt="解决"><br>同样也可以在使用rc-tree-select的组件中这样做</p>
+]]></content>
+      <categories>
+        <category>解决方案</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+        <tag>rc-tree</tag>
+        <tag>rc-tree-select</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PicGo+GitHub搭建个人免费图床，并在Typora中实现图片自定上传到GitHub</title>
     <url>/2024/04/09/PicGo+GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%EF%BC%8C%E5%B9%B6%E5%9C%A8Typora%E4%B8%AD%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%87%AA%E5%AE%9A%E4%B8%8A%E4%BC%A0%E5%88%B0GitHub/</url>
     <content><![CDATA[<p>2024/4/10 上午9:23</p>
@@ -53,6 +70,63 @@
       </tags>
   </entry>
   <entry>
+    <title>script标签中async和defer属性</title>
+    <url>/2024/07/08/script%E6%A0%87%E7%AD%BE%E4%B8%ADasync%E5%92%8Cdefer%E5%B1%9E%E6%80%A7/</url>
+    <content><![CDATA[<p><code>script</code>标签中的<code>script</code>和<code>defer</code>属性用于控制<code>JavaScript</code>脚本的加载和执行时机：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&#x27;script.js&#x27;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&#x27;async.js&#x27;</span> <span class="attr">async</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&#x27;defer.js&#x27;</span> <span class="attr">defer</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>开发过程中经常遇到这三类<code>script</code>，那么它们有什么区别？</p>
+<span id="more"></span>
+
+<h3 id="script"><a href="#script" class="headerlink" title="script"></a>script</h3><hr>
+<p>浏览器解析<code>HTML</code>的过程中，如果遇到没有任何属性的<code>script</code>标签，此时会暂停解析，去获取该JS脚本，然后执行完该JS代码后，然后继续解析。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(jQuery, <span class="string">&#x27;jquery&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>当<code>jquery</code>从远程加载完成后，才会继续执行后续代码，如果脚本加载时间过长，会导致白屏，用户看不到页面内容。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hkp4570/ImagePicGo@main/img/%E6%88%AA%E5%B1%8F2024-07-08%2011.13.17.png" alt="截屏2024-07-08 11.13.17"></p>
+<h3 id="async"><a href="#async" class="headerlink" title="async"></a>async</h3><hr>
+<p>浏览器解析过程中如果遇到<code>&lt;script src=&#39;async.js&#39; async&gt;</code>标签时，此时脚本是异步加载，与<code>HTML</code>解析并行执行。脚本加载完成之后立即执行，脚本的执行不会等待其他脚本的加载或<code>HTML</code>的解析。脚本的执行顺序无法保证，那个脚本先加载完成，就先执行哪个。</p>
+<h3 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h3><hr>
+<p>浏览器解析过程中如果遇到<code>&lt;script src=&#39;defer&#39; defer&gt;</code>标签时，此时脚本是异步加载，与<code>HTML</code>解析并行执行。脚本会在<code>HTML</code>解析完成后，<code>DOMContentLoaded</code>事件执行之前执行。脚本会在它们在<code>HTML</code>中出现的顺序执行。</p>
+<h3 id="async-和-defer-对比"><a href="#async-和-defer-对比" class="headerlink" title="async 和 defer 对比"></a>async 和 defer 对比</h3><hr>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>async</th>
+<th>defer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>加载方式</td>
+<td>异步加载</td>
+<td>异步加载</td>
+</tr>
+<tr>
+<td>执行时机</td>
+<td>加载完立即执行</td>
+<td>HTML解析完后执行</td>
+</tr>
+<tr>
+<td>执行顺序</td>
+<td>加载完的先后顺序（谁先加载完谁先执行）</td>
+<td>标签在文档中出现的顺序</td>
+</tr>
+<tr>
+<td>使用场景</td>
+<td>独立的第三方脚本，不依赖其他脚本</td>
+<td>依赖DOM结构或需要按顺序执行的脚本</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>记录</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo+GitHub搭建静态页面常见问题</title>
     <url>/2024/04/08/hexo+GitHub%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h4 id="部署代码时需要输入用户名和密码"><a href="#部署代码时需要输入用户名和密码" class="headerlink" title="部署代码时需要输入用户名和密码"></a>部署代码时需要输入用户名和密码</h4><p><img src="/2024/04/08/hexo+GitHub%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/1.png" alt="截屏2024-04-08 11.15.40"></p>
@@ -74,20 +148,24 @@
       </tags>
   </entry>
   <entry>
-    <title>react中引入rc-tree和rc-tree-select库之后样式覆盖问题</title>
-    <url>/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在项目中同时引入rc-tree和rc-tree-select库之后，同时在全局样式文件global.less中分别引入两个库的样式文件</p>
+    <title>vue项目webpack &lt; 5 used to include polyfills for node.js core modules by default. This is no longer the case. Verify if you need this module and configure a polyfill for it</title>
+    <url>/2024/05/31/webpack%20%3C%205%20used%20to%20include%20polyfills%20for%20node.js%20core%20modules%20by%20default.%20This%20is%20no%20longer%20the%20case.%20Verify%20if%20you%20need%20this%20module%20and%20configure%20a%20polyfill%20for%20it/</url>
+    <content><![CDATA[<h3 id="问题复现"><a href="#问题复现" class="headerlink" title="问题复现"></a>问题复现</h3><p>启动<a href="mailto:&#x76;&#117;&#x65;&#64;&#x32;&#46;&#x36;">&#x76;&#117;&#x65;&#64;&#x32;&#46;&#x36;</a>版本的项目时突然报错，查看<code>webpack</code>文档。原来<code>webpack 5</code> 不再自动 polyfill Node.js 的核心模块，这意味着如果你在浏览器或类似的环境中运行的代码中使用它们，你必须从 NPM 中安装兼容的模块，并自己包含它们。<a href="https://webpack.docschina.org/configuration/resolve/#resolvefallback">文档地址</a></p>
 <span id="more"></span>
-<p><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/1.png" alt="文件引入"><br>这时我们打开页面之后会发现rc-tree的样式没有正常显示，而且无法展开树结构<br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/2.png" alt="不正常显示"><br>可是下面这样才是正常显示<br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/3.png" alt="正常显示"><br>而此时rc-tree-select组件库却能够正常显示<br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/4.png" alt="正常显示"><br>当我们调整全局样式文件中两个库的样式引入顺序，会发现谁后引入谁就可以正常显示。猜测可能是发生了样式覆盖</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/5.png" alt="解决"><br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/6.png" alt="解决"><br>同样也可以在使用rc-tree-select的组件中这样做</p>
+
+<p><img src="https://cdn.jsdelivr.net/gh/hkp4570/ImagePicGo@main/img/image-20240531173830928.png" alt="image-20240531173830928"></p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>在<code>vue.config.js</code>配置文件中如下配置。如果你想包含某个polyfill，则手动下载对应的包。否则设置为false。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">    <span class="attr">transpileDependencies</span>: <span class="literal">true</span>, <span class="attr">devServer</span>: &#123;</span><br><span class="line">        <span class="attr">proxy</span>: &#123;</span><br><span class="line">            <span class="string">&quot;/v1&quot;</span>: &#123;</span><br><span class="line">                <span class="attr">target</span>: <span class="string">&quot;&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="attr">configureWebpack</span>: &#123;</span><br><span class="line">        <span class="attr">resolve</span>: &#123;</span><br><span class="line">            <span class="attr">fallback</span>: &#123;</span><br><span class="line">                <span class="string">&#x27;assert&#x27;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&#x27;process&#x27;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&#x27;url&#x27;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&#x27;path-browserify&#x27;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&#x27;util&#x27;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&quot;fs&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&quot;module&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&quot;v8&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&quot;path&quot;</span>: <span class="built_in">require</span>.<span class="title function_">resolve</span>(<span class="string">&quot;path-browserify&quot;</span>) <span class="comment">// npm install path-browserify</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>或者下载插件<code>node-polyfill-webpack-plugin</code>，该插件Polyfill Webpack5 中的 Node.js 核心模块。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">NodePolyfillPlugin</span> = <span class="built_in">require</span>(<span class="string">&quot;node-polyfill-webpack-plugin&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">    <span class="attr">transpileDependencies</span>: <span class="literal">true</span>, <span class="attr">devServer</span>: &#123;</span><br><span class="line">        <span class="attr">proxy</span>: &#123;</span><br><span class="line">            <span class="string">&quot;/v1&quot;</span>: &#123;</span><br><span class="line">                <span class="attr">target</span>: <span class="string">&quot;&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="attr">configureWebpack</span>: &#123;</span><br><span class="line">        <span class="attr">resolve</span>: &#123;</span><br><span class="line">            <span class="attr">fallback</span>: &#123;</span><br><span class="line">                <span class="string">&quot;module&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&quot;v8&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">plugins</span>: [</span><br><span class="line">            <span class="keyword">new</span> <span class="title class_">NodePolyfillPlugin</span>()</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>解决方案</category>
       </categories>
       <tags>
-        <tag>react</tag>
-        <tag>rc-tree</tag>
-        <tag>rc-tree-select</tag>
+        <tag>vue@2 webpack@5</tag>
       </tags>
   </entry>
   <entry>
@@ -164,27 +242,6 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue项目webpack &lt; 5 used to include polyfills for node.js core modules by default. This is no longer the case. Verify if you need this module and configure a polyfill for it</title>
-    <url>/2024/05/31/webpack%20%3C%205%20used%20to%20include%20polyfills%20for%20node.js%20core%20modules%20by%20default.%20This%20is%20no%20longer%20the%20case.%20Verify%20if%20you%20need%20this%20module%20and%20configure%20a%20polyfill%20for%20it/</url>
-    <content><![CDATA[<h3 id="问题复现"><a href="#问题复现" class="headerlink" title="问题复现"></a>问题复现</h3><p>启动<a href="mailto:&#x76;&#x75;&#101;&#64;&#50;&#46;&#x36;">&#x76;&#x75;&#101;&#64;&#50;&#46;&#x36;</a>版本的项目时突然报错，查看<code>webpack</code>文档。原来<code>webpack 5</code> 不再自动 polyfill Node.js 的核心模块，这意味着如果你在浏览器或类似的环境中运行的代码中使用它们，你必须从 NPM 中安装兼容的模块，并自己包含它们。<a href="https://webpack.docschina.org/configuration/resolve/#resolvefallback">文档地址</a></p>
-<span id="more"></span>
-
-<p><img src="https://cdn.jsdelivr.net/gh/hkp4570/ImagePicGo@main/img/image-20240531173830928.png" alt="image-20240531173830928"></p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>在<code>vue.config.js</code>配置文件中如下配置。如果你想包含某个polyfill，则手动下载对应的包。否则设置为false。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">    <span class="attr">transpileDependencies</span>: <span class="literal">true</span>, <span class="attr">devServer</span>: &#123;</span><br><span class="line">        <span class="attr">proxy</span>: &#123;</span><br><span class="line">            <span class="string">&quot;/v1&quot;</span>: &#123;</span><br><span class="line">                <span class="attr">target</span>: <span class="string">&quot;&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="attr">configureWebpack</span>: &#123;</span><br><span class="line">        <span class="attr">resolve</span>: &#123;</span><br><span class="line">            <span class="attr">fallback</span>: &#123;</span><br><span class="line">                <span class="string">&#x27;assert&#x27;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&#x27;process&#x27;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&#x27;url&#x27;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&#x27;path-browserify&#x27;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&#x27;util&#x27;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&quot;fs&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&quot;module&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&quot;v8&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&quot;path&quot;</span>: <span class="built_in">require</span>.<span class="title function_">resolve</span>(<span class="string">&quot;path-browserify&quot;</span>) <span class="comment">// npm install path-browserify</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>或者下载插件<code>node-polyfill-webpack-plugin</code>，该插件Polyfill Webpack5 中的 Node.js 核心模块。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">NodePolyfillPlugin</span> = <span class="built_in">require</span>(<span class="string">&quot;node-polyfill-webpack-plugin&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">    <span class="attr">transpileDependencies</span>: <span class="literal">true</span>, <span class="attr">devServer</span>: &#123;</span><br><span class="line">        <span class="attr">proxy</span>: &#123;</span><br><span class="line">            <span class="string">&quot;/v1&quot;</span>: &#123;</span><br><span class="line">                <span class="attr">target</span>: <span class="string">&quot;&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="attr">configureWebpack</span>: &#123;</span><br><span class="line">        <span class="attr">resolve</span>: &#123;</span><br><span class="line">            <span class="attr">fallback</span>: &#123;</span><br><span class="line">                <span class="string">&quot;module&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">&quot;v8&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">plugins</span>: [</span><br><span class="line">            <span class="keyword">new</span> <span class="title class_">NodePolyfillPlugin</span>()</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>解决方案</category>
-      </categories>
-      <tags>
-        <tag>vue@2 webpack@5</tag>
       </tags>
   </entry>
 </search>
