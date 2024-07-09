@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>script标签中async和defer属性 |  Colourful的博客</title>
+      <title>TypeScript中的type和interface |  Colourful的博客</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -55,7 +55,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-script标签中async和defer属性"
+  id="post-TypeScript中的type和interface"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -66,7 +66,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  script标签中async和defer属性
+  TypeScript中的type和interface
 </h1>
  
 
@@ -74,8 +74,8 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/07/08/script%E6%A0%87%E7%AD%BE%E4%B8%ADasync%E5%92%8Cdefer%E5%B1%9E%E6%80%A7/" class="article-date">
-  <time datetime="2024-07-08T01:51:40.000Z" itemprop="datePublished">2024-07-08</time>
+      <a href="/2024/07/09/TypeScript%E4%B8%AD%E7%9A%84type%E5%92%8Cinterface/" class="article-date">
+  <time datetime="2024-07-09T02:19:55.000Z" itemprop="datePublished">2024-07-09</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>
@@ -86,7 +86,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">542</span>
+            <span class="post-count">422</span>
         </span>
     </span>
 
@@ -95,7 +95,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">2 分钟</span>
+            <span class="post-count">1 分钟</span>
         </span>
     </span>
 </div>
@@ -110,52 +110,42 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p><code>script</code>标签中的<code>script</code>和<code>defer</code>属性用于控制<code>JavaScript</code>脚本的加载和执行时机：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&#x27;script.js&#x27;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&#x27;async.js&#x27;</span> <span class="attr">async</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&#x27;defer.js&#x27;</span> <span class="attr">defer</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>开发过程中经常遇到这三类<code>script</code>，那么它们有什么区别？</p>
+  <p>在<code>TypeScript</code>中，<code>type</code>和<code>interface</code>都用来定义类型，但它们在使用方式和功能上有一些关键区别。</p>
+<h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><hr>
+<p><code>type</code>用于定义类型别名，可以是任意类型的组合，包括基本类型、联合类型、交叉类型等。使用非常灵活，可以表示复杂的类型结构。</p>
 <span id="more"></span>
 
-<h3 id="script"><a href="#script" class="headerlink" title="script"></a>script</h3><hr>
-<p>浏览器解析<code>HTML</code>的过程中，如果遇到没有任何属性的<code>script</code>标签，此时会暂停解析，去获取该JS脚本，然后执行完该JS代码后，然后继续解析。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(jQuery, <span class="string">&#x27;jquery&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用示例：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">StringOrNumber</span> = <span class="built_in">string</span> | <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">User</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">PartialUser</span> = &#123;</span><br><span class="line">  name?: <span class="built_in">string</span>;</span><br><span class="line">  age?: <span class="built_in">number</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">UserOrPartialUser</span> = <span class="title class_">User</span> | <span class="title class_">PartialUser</span>;</span><br></pre></td></tr></table></figure>
 
-<p>当<code>jquery</code>从远程加载完成后，才会继续执行后续代码，如果脚本加载时间过长，会导致白屏，用户看不到页面内容。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hkp4570/ImagePicGo@main/img/%E6%88%AA%E5%B1%8F2024-07-08%2011.13.17.png" alt="截屏2024-07-08 11.13.17"></p>
-<h3 id="async"><a href="#async" class="headerlink" title="async"></a>async</h3><hr>
-<p>浏览器解析过程中如果遇到<code>&lt;script src=&#39;async.js&#39; async&gt;</code>标签时，此时脚本是异步加载，与<code>HTML</code>解析并行执行。脚本加载完成之后立即执行，脚本的执行不会等待其他脚本的加载或<code>HTML</code>的解析。脚本的执行顺序无法保证，那个脚本先加载完成，就先执行哪个。</p>
-<h3 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h3><hr>
-<p>浏览器解析过程中如果遇到<code>&lt;script src=&#39;defer&#39; defer&gt;</code>标签时，此时脚本是异步加载，与<code>HTML</code>解析并行执行。脚本会在<code>HTML</code>解析完成后，<code>DOMContentLoaded</code>事件执行之前执行。脚本会在它们在<code>HTML</code>中出现的顺序执行。</p>
-<h3 id="async-和-defer-对比"><a href="#async-和-defer-对比" class="headerlink" title="async 和 defer 对比"></a>async 和 defer 对比</h3><hr>
-<table>
-<thead>
-<tr>
-<th>特性</th>
-<th>async</th>
-<th>defer</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>加载方式</td>
-<td>异步加载</td>
-<td>异步加载</td>
-</tr>
-<tr>
-<td>执行时机</td>
-<td>加载完立即执行</td>
-<td>HTML解析完后执行</td>
-</tr>
-<tr>
-<td>执行顺序</td>
-<td>加载完的先后顺序（谁先加载完谁先执行）</td>
-<td>标签在文档中出现的顺序</td>
-</tr>
-<tr>
-<td>使用场景</td>
-<td>独立的第三方脚本，不依赖其他脚本</td>
-<td>依赖DOM结构或需要按顺序执行的脚本</td>
-</tr>
-</tbody></table>
+<h3 id="interface"><a href="#interface" class="headerlink" title="interface"></a>interface</h3><hr>
+<p><code>interface</code>是对象的模板，可以描述对象的属性及其类型。它支持继承，可以扩展和合并其他接口。</p>
+<p>使用示例：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> A &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> B &#123;</span><br><span class="line">  <span class="attr">color</span>: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 接口继承</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Circle</span> <span class="keyword">extends</span> A &#123;</span><br><span class="line">  <span class="attr">employeeId</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Rect</span> <span class="keyword">extends</span> A, B &#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 接口合并</span></span><br><span class="line"><span class="keyword">interface</span> A &#123;</span><br><span class="line">  <span class="attr">card</span>: <span class="built_in">object</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="title function_">move</span>(<span class="attr">distance</span>: <span class="built_in">number</span>): <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">implements</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">move</span>(<span class="params">distance: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> moved <span class="subst">$&#123;distance&#125;</span> meters.`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="关键区别"><a href="#关键区别" class="headerlink" title="关键区别"></a>关键区别</h3><hr>
+<ol>
+<li>用途和灵活性<ul>
+<li><code>type</code>可以用来定义基本类型、联合类型、交叉类型，元祖等，使用更灵活。</li>
+<li><code>interface</code>主要用来定义对象的模板。</li>
+</ul>
+</li>
+<li>扩展和合并<ul>
+<li><code>interface</code>可以通过<code>extends</code>关键字来继承其他接口，可以多次声明同一个接口，所有声明会被合并。</li>
+<li><code>type</code>可以通过交叉类型（<code>&amp;</code>）来组合类型，但不能多次声明同一个类型别名。</li>
+</ul>
+</li>
+<li>实现类：<ul>
+<li><code>interface</code>可以被类实现（<code>implements</code>）。</li>
+<li><code>type</code>不支持直接被类实现。</li>
+</ul>
+</li>
+<li>语法特性：<ul>
+<li><code>interface</code>可以有可选属性（通过<code>?</code>标记）。</li>
+<li><code>type</code>也可以通过联合类型和交叉类型实现类似的功能，但语法上不如<code>interface</code>明确。</li>
+</ul>
+</li>
+</ol>
  
       <!-- reward -->
       
@@ -208,12 +198,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://hkp4570.github.io/2024/07/08/script%E6%A0%87%E7%AD%BE%E4%B8%ADasync%E5%92%8Cdefer%E5%B1%9E%E6%80%A7/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://hkp4570.github.io/2024/07/09/TypeScript%E4%B8%AD%E7%9A%84type%E5%92%8Cinterface/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/" rel="tag">typescript</a></li></ul>
 
     </footer>
   </div>
@@ -221,19 +211,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2024/07/09/TypeScript%E4%B8%AD%E7%9A%84type%E5%92%8Cinterface/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            TypeScript中的type和interface
-          
-        </div>
-      </a>
     
-    
-      <a href="/2024/05/31/webpack%20%3C%205%20used%20to%20include%20polyfills%20for%20node.js%20core%20modules%20by%20default.%20This%20is%20no%20longer%20the%20case.%20Verify%20if%20you%20need%20this%20module%20and%20configure%20a%20polyfill%20for%20it/" class="article-nav-link">
+      <a href="/2024/07/08/script%E6%A0%87%E7%AD%BE%E4%B8%ADasync%E5%92%8Cdefer%E5%B1%9E%E6%80%A7/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">vue项目webpack &lt; 5 used to include polyfills for node.js core modules by default. This is no longer the case. Verify if you need this module and configure a polyfill for it</div>
+        <div class="article-nav-title">script标签中async和defer属性</div>
       </a>
     
   </nav>

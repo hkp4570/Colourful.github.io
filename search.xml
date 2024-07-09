@@ -244,4 +244,51 @@
         <tag>javascript</tag>
       </tags>
   </entry>
+  <entry>
+    <title>TypeScript中的type和interface</title>
+    <url>/2024/07/09/TypeScript%E4%B8%AD%E7%9A%84type%E5%92%8Cinterface/</url>
+    <content><![CDATA[<p>在<code>TypeScript</code>中，<code>type</code>和<code>interface</code>都用来定义类型，但它们在使用方式和功能上有一些关键区别。</p>
+<h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><hr>
+<p><code>type</code>用于定义类型别名，可以是任意类型的组合，包括基本类型、联合类型、交叉类型等。使用非常灵活，可以表示复杂的类型结构。</p>
+<span id="more"></span>
+
+<p>使用示例：</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">StringOrNumber</span> = <span class="built_in">string</span> | <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">User</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">PartialUser</span> = &#123;</span><br><span class="line">  name?: <span class="built_in">string</span>;</span><br><span class="line">  age?: <span class="built_in">number</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">UserOrPartialUser</span> = <span class="title class_">User</span> | <span class="title class_">PartialUser</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="interface"><a href="#interface" class="headerlink" title="interface"></a>interface</h3><hr>
+<p><code>interface</code>是对象的模板，可以描述对象的属性及其类型。它支持继承，可以扩展和合并其他接口。</p>
+<p>使用示例：</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> A &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> B &#123;</span><br><span class="line">  <span class="attr">color</span>: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 接口继承</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Circle</span> <span class="keyword">extends</span> A &#123;</span><br><span class="line">  <span class="attr">employeeId</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Rect</span> <span class="keyword">extends</span> A, B &#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 接口合并</span></span><br><span class="line"><span class="keyword">interface</span> A &#123;</span><br><span class="line">  <span class="attr">card</span>: <span class="built_in">object</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="title function_">move</span>(<span class="attr">distance</span>: <span class="built_in">number</span>): <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">implements</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">move</span>(<span class="params">distance: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> moved <span class="subst">$&#123;distance&#125;</span> meters.`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="关键区别"><a href="#关键区别" class="headerlink" title="关键区别"></a>关键区别</h3><hr>
+<ol>
+<li>用途和灵活性<ul>
+<li><code>type</code>可以用来定义基本类型、联合类型、交叉类型，元祖等，使用更灵活。</li>
+<li><code>interface</code>主要用来定义对象的模板。</li>
+</ul>
+</li>
+<li>扩展和合并<ul>
+<li><code>interface</code>可以通过<code>extends</code>关键字来继承其他接口，可以多次声明同一个接口，所有声明会被合并。</li>
+<li><code>type</code>可以通过交叉类型（<code>&amp;</code>）来组合类型，但不能多次声明同一个类型别名。</li>
+</ul>
+</li>
+<li>实现类：<ul>
+<li><code>interface</code>可以被类实现（<code>implements</code>）。</li>
+<li><code>type</code>不支持直接被类实现。</li>
+</ul>
+</li>
+<li>语法特性：<ul>
+<li><code>interface</code>可以有可选属性（通过<code>?</code>标记）。</li>
+<li><code>type</code>也可以通过联合类型和交叉类型实现类似的功能，但语法上不如<code>interface</code>明确。</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>记录</category>
+      </categories>
+      <tags>
+        <tag>typescript</tag>
+      </tags>
+  </entry>
 </search>
